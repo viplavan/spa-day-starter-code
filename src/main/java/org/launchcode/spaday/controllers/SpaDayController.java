@@ -10,6 +10,8 @@ import java.util.ArrayList;
 @Controller
 public class SpaDayController {
 
+    //ArrayList<String> facials = new ArrayList<String>();
+
     public boolean checkSkinType(String skinType, String facialType) {
         if (skinType.equals("oily")) {
             if (facialType.equals("Microdermabrasion") || facialType.equals("Rejuvenating")) {
@@ -81,7 +83,10 @@ public class SpaDayController {
                 appropriateFacials.add(facials.get(i));
             }
         }
-
+        model.addAttribute("name", name);
+        model.addAttribute("skintype",skintype);
+        model.addAttribute("manipedi", manipedi);
+        model.addAttribute("appropriateFacials",appropriateFacials);
         return "menu";
     }
 }
